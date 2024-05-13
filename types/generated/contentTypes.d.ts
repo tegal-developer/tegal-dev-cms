@@ -362,68 +362,6 @@ export interface AdminTransferTokenPermission extends Schema.CollectionType {
   };
 }
 
-export interface ApiHomePageContentHomePageContent extends Schema.SingleType {
-  collectionName: 'home_page_contents';
-  info: {
-    singularName: 'home-page-content';
-    pluralName: 'home-page-contents';
-    displayName: 'Home Page Content';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    hero_image: Attribute.String & Attribute.Required;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::home-page-content.home-page-content',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::home-page-content.home-page-content',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiMembershipMembership extends Schema.CollectionType {
-  collectionName: 'memberships';
-  info: {
-    singularName: 'membership';
-    pluralName: 'memberships';
-    displayName: 'Membership';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    name: Attribute.String & Attribute.Required;
-    description: Attribute.Text;
-    price: Attribute.Integer & Attribute.Required;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::membership.membership',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::membership.membership',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface PluginUploadFile extends Schema.CollectionType {
   collectionName: 'files';
   info: {
@@ -850,6 +788,101 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiHomePageContentHomePageContent extends Schema.SingleType {
+  collectionName: 'home_page_contents';
+  info: {
+    singularName: 'home-page-content';
+    pluralName: 'home-page-contents';
+    displayName: 'Home Page Content';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    hero_image: Attribute.String & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::home-page-content.home-page-content',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::home-page-content.home-page-content',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiLogoContentLogoContent extends Schema.SingleType {
+  collectionName: 'logo_contents';
+  info: {
+    singularName: 'logo-content';
+    pluralName: 'logo-contents';
+    displayName: 'Logo Content';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    image: Attribute.Media & Attribute.Required;
+    alt: Attribute.String & Attribute.Required;
+    width: Attribute.Integer & Attribute.Required;
+    height: Attribute.Integer & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::logo-content.logo-content',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::logo-content.logo-content',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiMembershipMembership extends Schema.CollectionType {
+  collectionName: 'memberships';
+  info: {
+    singularName: 'membership';
+    pluralName: 'memberships';
+    displayName: 'Membership';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    name: Attribute.String & Attribute.Required;
+    description: Attribute.Text;
+    price: Attribute.Integer & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::membership.membership',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::membership.membership',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 declare module '@strapi/types' {
   export module Shared {
     export interface ContentTypes {
@@ -860,8 +893,6 @@ declare module '@strapi/types' {
       'admin::api-token-permission': AdminApiTokenPermission;
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
-      'api::home-page-content.home-page-content': ApiHomePageContentHomePageContent;
-      'api::membership.membership': ApiMembershipMembership;
       'plugin::upload.file': PluginUploadFile;
       'plugin::upload.folder': PluginUploadFolder;
       'plugin::content-releases.release': PluginContentReleasesRelease;
@@ -870,6 +901,9 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::home-page-content.home-page-content': ApiHomePageContentHomePageContent;
+      'api::logo-content.logo-content': ApiLogoContentLogoContent;
+      'api::membership.membership': ApiMembershipMembership;
     }
   }
 }

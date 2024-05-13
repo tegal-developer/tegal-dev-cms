@@ -1,0 +1,35 @@
+{
+  "kind": "singleType",
+  "collectionName": "logo_contents",
+  "info": {
+    "singularName": "logo-content",
+    "pluralName": "logo-contents",
+    "displayName": "Logo Content"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "alt": {
+      "type": "string",
+      "required": true
+    },
+    "width": {
+      "type": "integer",
+      "required": true
+    },
+    "height": {
+      "type": "integer",
+      "required": true
+    }
+  }
+}
