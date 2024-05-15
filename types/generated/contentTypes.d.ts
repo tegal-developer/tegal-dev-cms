@@ -795,6 +795,7 @@ export interface ApiCommunityActivityCommunityActivity
     singularName: 'community-activity';
     pluralName: 'community-activities';
     displayName: 'Community Activity';
+    description: '';
   };
   options: {
     draftAndPublish: true;
@@ -802,7 +803,14 @@ export interface ApiCommunityActivityCommunityActivity
   attributes: {
     image: Attribute.Media;
     name: Attribute.String & Attribute.Required;
-    description: Attribute.Text & Attribute.Required;
+    description: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;

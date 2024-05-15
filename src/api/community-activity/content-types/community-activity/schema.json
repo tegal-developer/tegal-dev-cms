@@ -4,7 +4,8 @@
   "info": {
     "singularName": "community-activity",
     "pluralName": "community-activities",
-    "displayName": "Community Activity"
+    "displayName": "Community Activity",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,20 +13,24 @@
   "pluginOptions": {},
   "attributes": {
     "image": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
-      "required": false
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
     },
     "name": {
       "type": "string",
       "required": true
     },
     "description": {
-      "type": "text",
-      "required": true
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "customField": "plugin::ckeditor.CKEditor"
     }
   }
 }
