@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "community_activities",
+  "info": {
+    "singularName": "community-activity",
+    "pluralName": "community-activities",
+    "displayName": "Community Activity"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": false
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

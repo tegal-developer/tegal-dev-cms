@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "core_team_versions",
+  "info": {
+    "singularName": "core-team-version",
+    "pluralName": "core-team-versions",
+    "displayName": "Core Team Version"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "version": {
+      "type": "string",
+      "required": true
+    },
+    "core_team_members": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::core-team-member.core-team-member",
+      "mappedBy": "core_team_version"
+    }
+  }
+}

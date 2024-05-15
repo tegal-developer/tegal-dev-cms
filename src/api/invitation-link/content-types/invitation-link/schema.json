@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "invitation_links",
+  "info": {
+    "singularName": "invitation-link",
+    "pluralName": "invitation-links",
+    "displayName": "Invitation Link"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "button_label": {
+      "type": "string",
+      "required": true
+    },
+    "button_link": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

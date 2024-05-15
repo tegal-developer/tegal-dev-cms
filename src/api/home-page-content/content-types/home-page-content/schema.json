@@ -4,15 +4,20 @@
   "info": {
     "singularName": "home-page-content",
     "pluralName": "home-page-contents",
-    "displayName": "Home Page Content"
+    "displayName": "Home Page Content",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "hero_image": {
+    "hero_heading": {
       "type": "string",
+      "required": true
+    },
+    "hero_description": {
+      "type": "text",
       "required": true
     }
   }
