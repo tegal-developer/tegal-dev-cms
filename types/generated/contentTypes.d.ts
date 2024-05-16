@@ -974,6 +974,36 @@ export interface ApiEventTypeEventType extends Schema.CollectionType {
   };
 }
 
+export interface ApiFaqFaq extends Schema.CollectionType {
+  collectionName: 'faqs';
+  info: {
+    singularName: 'faq';
+    pluralName: 'faqs';
+    displayName: 'FAQ';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    question: Attribute.String & Attribute.Required;
+    answer: Attribute.RichText &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::faq.faq', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::faq.faq', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
 export interface ApiHeadlineContentHeadlineContent extends Schema.SingleType {
   collectionName: 'headline_contents';
   info: {
@@ -1197,6 +1227,7 @@ declare module '@strapi/types' {
       'api::core-team-member.core-team-member': ApiCoreTeamMemberCoreTeamMember;
       'api::core-team-version.core-team-version': ApiCoreTeamVersionCoreTeamVersion;
       'api::event-type.event-type': ApiEventTypeEventType;
+      'api::faq.faq': ApiFaqFaq;
       'api::headline-content.headline-content': ApiHeadlineContentHeadlineContent;
       'api::home-page-content.home-page-content': ApiHomePageContentHomePageContent;
       'api::invitation-link.invitation-link': ApiInvitationLinkInvitationLink;
