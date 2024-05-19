@@ -801,7 +801,7 @@ export interface ApiCommunityActivityCommunityActivity
     draftAndPublish: true;
   };
   attributes: {
-    image: Attribute.Media;
+    images: Attribute.Media;
     name: Attribute.String & Attribute.Required;
     description: Attribute.RichText &
       Attribute.CustomField<
@@ -858,80 +858,6 @@ export interface ApiCommunityPhotoCommunityPhoto extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::community-photo.community-photo',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiCoreTeamMemberCoreTeamMember extends Schema.CollectionType {
-  collectionName: 'core_team_members';
-  info: {
-    singularName: 'core-team-member';
-    pluralName: 'core-team-members';
-    displayName: 'Core Team Member';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    name: Attribute.String & Attribute.Required;
-    email: Attribute.Email & Attribute.Required;
-    phone_number: Attribute.String & Attribute.Required;
-    core_team_version: Attribute.Relation<
-      'api::core-team-member.core-team-member',
-      'manyToOne',
-      'api::core-team-version.core-team-version'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::core-team-member.core-team-member',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::core-team-member.core-team-member',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiCoreTeamVersionCoreTeamVersion
-  extends Schema.CollectionType {
-  collectionName: 'core_team_versions';
-  info: {
-    singularName: 'core-team-version';
-    pluralName: 'core-team-versions';
-    displayName: 'Core Team Version';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    version: Attribute.String & Attribute.Required;
-    core_team_members: Attribute.Relation<
-      'api::core-team-version.core-team-version',
-      'oneToMany',
-      'api::core-team-member.core-team-member'
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::core-team-version.core-team-version',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::core-team-version.core-team-version',
       'oneToOne',
       'admin::user'
     > &
@@ -1000,43 +926,6 @@ export interface ApiFaqFaq extends Schema.CollectionType {
     createdBy: Attribute.Relation<'api::faq.faq', 'oneToOne', 'admin::user'> &
       Attribute.Private;
     updatedBy: Attribute.Relation<'api::faq.faq', 'oneToOne', 'admin::user'> &
-      Attribute.Private;
-  };
-}
-
-export interface ApiHeadlineContentHeadlineContent extends Schema.SingleType {
-  collectionName: 'headline_contents';
-  info: {
-    singularName: 'headline-content';
-    pluralName: 'headline-contents';
-    displayName: 'Headline Content';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    content: Attribute.RichText &
-      Attribute.CustomField<
-        'plugin::ckeditor.CKEditor',
-        {
-          output: 'HTML';
-          preset: 'rich';
-        }
-      >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::headline-content.headline-content',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::headline-content.headline-content',
-      'oneToOne',
-      'admin::user'
-    > &
       Attribute.Private;
   };
 }
@@ -1224,11 +1113,8 @@ declare module '@strapi/types' {
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::community-activity.community-activity': ApiCommunityActivityCommunityActivity;
       'api::community-photo.community-photo': ApiCommunityPhotoCommunityPhoto;
-      'api::core-team-member.core-team-member': ApiCoreTeamMemberCoreTeamMember;
-      'api::core-team-version.core-team-version': ApiCoreTeamVersionCoreTeamVersion;
       'api::event-type.event-type': ApiEventTypeEventType;
       'api::faq.faq': ApiFaqFaq;
-      'api::headline-content.headline-content': ApiHeadlineContentHeadlineContent;
       'api::home-page-content.home-page-content': ApiHomePageContentHomePageContent;
       'api::invitation-link.invitation-link': ApiInvitationLinkInvitationLink;
       'api::logo-content.logo-content': ApiLogoContentLogoContent;
