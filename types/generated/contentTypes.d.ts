@@ -829,35 +829,30 @@ export interface ApiCommunityActivityCommunityActivity
   };
 }
 
-export interface ApiCommunityPhotoCommunityPhoto extends Schema.CollectionType {
-  collectionName: 'community_photos';
+export interface ApiCommunityBenefitCommunityBenefit
+  extends Schema.CollectionType {
+  collectionName: 'community_benefits';
   info: {
-    singularName: 'community-photo';
-    pluralName: 'community-photos';
-    displayName: 'Community Photo';
-    description: '';
+    singularName: 'community-benefit';
+    pluralName: 'community-benefits';
+    displayName: 'Community Benefit';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    photos: Attribute.Media & Attribute.Required;
-    event_type: Attribute.Relation<
-      'api::community-photo.community-photo',
-      'oneToOne',
-      'api::event-type.event-type'
-    >;
+    benefit: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::community-photo.community-photo',
+      'api::community-benefit.community-benefit',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::community-photo.community-photo',
+      'api::community-benefit.community-benefit',
       'oneToOne',
       'admin::user'
     > &
@@ -865,34 +860,30 @@ export interface ApiCommunityPhotoCommunityPhoto extends Schema.CollectionType {
   };
 }
 
-export interface ApiEventTypeEventType extends Schema.CollectionType {
-  collectionName: 'event_types';
+export interface ApiCommunityHashtagCommunityHashtag
+  extends Schema.CollectionType {
+  collectionName: 'community_hashtags';
   info: {
-    singularName: 'event-type';
-    pluralName: 'event-types';
-    displayName: 'Event Type';
+    singularName: 'community-hashtag';
+    pluralName: 'community-hashtags';
+    displayName: 'Community Hashtag';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    name: Attribute.String & Attribute.Required;
-    community_photo: Attribute.Relation<
-      'api::event-type.event-type',
-      'oneToOne',
-      'api::community-photo.community-photo'
-    >;
+    hashtag: Attribute.String & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
     createdBy: Attribute.Relation<
-      'api::event-type.event-type',
+      'api::community-hashtag.community-hashtag',
       'oneToOne',
       'admin::user'
     > &
       Attribute.Private;
     updatedBy: Attribute.Relation<
-      'api::event-type.event-type',
+      'api::community-hashtag.community-hashtag',
       'oneToOne',
       'admin::user'
     > &
@@ -942,8 +933,26 @@ export interface ApiHomePageContentHomePageContent extends Schema.SingleType {
     draftAndPublish: true;
   };
   attributes: {
-    hero_heading: Attribute.String & Attribute.Required;
-    hero_description: Attribute.Text & Attribute.Required;
+    hero_heading: Attribute.RichText &
+      Attribute.Required &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      >;
+    hero_body: Attribute.RichText &
+      Attribute.Required &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      >;
+    hero_images: Attribute.Media & Attribute.Required;
+    about_section: Attribute.Text & Attribute.Required;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -1029,38 +1038,6 @@ export interface ApiLogoContentLogoContent extends Schema.SingleType {
   };
 }
 
-export interface ApiMembershipMembership extends Schema.CollectionType {
-  collectionName: 'memberships';
-  info: {
-    singularName: 'membership';
-    pluralName: 'memberships';
-    displayName: 'Membership';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    name: Attribute.String & Attribute.Required;
-    description: Attribute.Text;
-    price: Attribute.Integer & Attribute.Required;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::membership.membership',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::membership.membership',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiNewsletterSubscriberNewsletterSubscriber
   extends Schema.CollectionType {
   collectionName: 'newsletter_subscribers';
@@ -1112,13 +1089,12 @@ declare module '@strapi/types' {
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
       'api::community-activity.community-activity': ApiCommunityActivityCommunityActivity;
-      'api::community-photo.community-photo': ApiCommunityPhotoCommunityPhoto;
-      'api::event-type.event-type': ApiEventTypeEventType;
+      'api::community-benefit.community-benefit': ApiCommunityBenefitCommunityBenefit;
+      'api::community-hashtag.community-hashtag': ApiCommunityHashtagCommunityHashtag;
       'api::faq.faq': ApiFaqFaq;
       'api::home-page-content.home-page-content': ApiHomePageContentHomePageContent;
       'api::invitation-link.invitation-link': ApiInvitationLinkInvitationLink;
       'api::logo-content.logo-content': ApiLogoContentLogoContent;
-      'api::membership.membership': ApiMembershipMembership;
       'api::newsletter-subscriber.newsletter-subscriber': ApiNewsletterSubscriberNewsletterSubscriber;
     }
   }

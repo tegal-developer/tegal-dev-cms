@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "community_hashtags",
+  "info": {
+    "singularName": "community-hashtag",
+    "pluralName": "community-hashtags",
+    "displayName": "Community Hashtag"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "hashtag": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

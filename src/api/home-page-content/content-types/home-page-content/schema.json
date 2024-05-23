@@ -13,10 +13,32 @@
   "pluginOptions": {},
   "attributes": {
     "hero_heading": {
-      "type": "string",
-      "required": true
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "required": true,
+      "customField": "plugin::ckeditor.CKEditor"
     },
-    "hero_description": {
+    "hero_body": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "required": true,
+      "customField": "plugin::ckeditor.CKEditor"
+    },
+    "hero_images": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "about_section": {
       "type": "text",
       "required": true
     }
