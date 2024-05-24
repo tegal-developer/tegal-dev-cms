@@ -921,6 +921,79 @@ export interface ApiFaqFaq extends Schema.CollectionType {
   };
 }
 
+export interface ApiFooterContentFooterContent extends Schema.SingleType {
+  collectionName: 'footer_contents';
+  info: {
+    singularName: 'footer-content';
+    pluralName: 'footer-contents';
+    displayName: 'Footer Content';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    content: Attribute.RichText &
+      Attribute.Required &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::footer-content.footer-content',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::footer-content.footer-content',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiHeaderContentHeaderContent extends Schema.SingleType {
+  collectionName: 'header_contents';
+  info: {
+    singularName: 'header-content';
+    pluralName: 'header-contents';
+    displayName: 'Header Content';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    logo_image_light: Attribute.Media & Attribute.Required;
+    logo_image_dark: Attribute.Media & Attribute.Required;
+    logo_image_alt: Attribute.String & Attribute.Required;
+    logo_image_width: Attribute.Integer & Attribute.Required;
+    logo_image_height: Attribute.Integer & Attribute.Required;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::header-content.header-content',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::header-content.header-content',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiHomePageContentHomePageContent extends Schema.SingleType {
   collectionName: 'home_page_contents';
   info: {
@@ -933,7 +1006,7 @@ export interface ApiHomePageContentHomePageContent extends Schema.SingleType {
     draftAndPublish: true;
   };
   attributes: {
-    hero_heading: Attribute.RichText &
+    hero_section_heading: Attribute.RichText &
       Attribute.Required &
       Attribute.CustomField<
         'plugin::ckeditor.CKEditor',
@@ -942,7 +1015,7 @@ export interface ApiHomePageContentHomePageContent extends Schema.SingleType {
           preset: 'rich';
         }
       >;
-    hero_body: Attribute.RichText &
+    hero_section_body: Attribute.RichText &
       Attribute.Required &
       Attribute.CustomField<
         'plugin::ckeditor.CKEditor',
@@ -951,8 +1024,70 @@ export interface ApiHomePageContentHomePageContent extends Schema.SingleType {
           preset: 'rich';
         }
       >;
-    hero_images: Attribute.Media & Attribute.Required;
-    about_section: Attribute.Text & Attribute.Required;
+    hero_section_images: Attribute.Media & Attribute.Required;
+    event_section_heading: Attribute.RichText &
+      Attribute.Required &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      >;
+    blog_section_heading: Attribute.RichText &
+      Attribute.Required &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      >;
+    about_section_heading: Attribute.RichText &
+      Attribute.Required &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      >;
+    about_section_body: Attribute.RichText &
+      Attribute.Required &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      >;
+    activity_section_heading: Attribute.RichText &
+      Attribute.Required &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      >;
+    contact_section_heading: Attribute.RichText &
+      Attribute.Required &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      >;
+    faq_section_heading: Attribute.RichText &
+      Attribute.Required &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      >;
     createdAt: Attribute.DateTime;
     updatedAt: Attribute.DateTime;
     publishedAt: Attribute.DateTime;
@@ -996,41 +1131,6 @@ export interface ApiInvitationLinkInvitationLink extends Schema.CollectionType {
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::invitation-link.invitation-link',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiLogoContentLogoContent extends Schema.SingleType {
-  collectionName: 'logo_contents';
-  info: {
-    singularName: 'logo-content';
-    pluralName: 'logo-contents';
-    displayName: 'Logo Content';
-    description: '';
-  };
-  options: {
-    draftAndPublish: true;
-  };
-  attributes: {
-    image_light: Attribute.Media & Attribute.Required;
-    image_dark: Attribute.Media & Attribute.Required;
-    alt: Attribute.String & Attribute.Required;
-    width: Attribute.Integer & Attribute.Required;
-    height: Attribute.Integer & Attribute.Required;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    publishedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::logo-content.logo-content',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::logo-content.logo-content',
       'oneToOne',
       'admin::user'
     > &
@@ -1092,9 +1192,10 @@ declare module '@strapi/types' {
       'api::community-benefit.community-benefit': ApiCommunityBenefitCommunityBenefit;
       'api::community-hashtag.community-hashtag': ApiCommunityHashtagCommunityHashtag;
       'api::faq.faq': ApiFaqFaq;
+      'api::footer-content.footer-content': ApiFooterContentFooterContent;
+      'api::header-content.header-content': ApiHeaderContentHeaderContent;
       'api::home-page-content.home-page-content': ApiHomePageContentHomePageContent;
       'api::invitation-link.invitation-link': ApiInvitationLinkInvitationLink;
-      'api::logo-content.logo-content': ApiLogoContentLogoContent;
       'api::newsletter-subscriber.newsletter-subscriber': ApiNewsletterSubscriberNewsletterSubscriber;
     }
   }

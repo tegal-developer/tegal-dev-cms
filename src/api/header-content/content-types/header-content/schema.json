@@ -1,10 +1,10 @@
 {
   "kind": "singleType",
-  "collectionName": "logo_contents",
+  "collectionName": "header_contents",
   "info": {
-    "singularName": "logo-content",
-    "pluralName": "logo-contents",
-    "displayName": "Logo Content",
+    "singularName": "header-content",
+    "pluralName": "header-contents",
+    "displayName": "Header Content",
     "description": ""
   },
   "options": {
@@ -12,7 +12,7 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "image_light": {
+    "logo_image_light": {
       "type": "media",
       "multiple": false,
       "required": true,
@@ -20,23 +20,23 @@
         "images"
       ]
     },
-    "image_dark": {
-      "allowedTypes": [
-        "images"
-      ],
+    "logo_image_dark": {
       "type": "media",
       "multiple": false,
-      "required": true
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
     },
-    "alt": {
+    "logo_image_alt": {
       "type": "string",
       "required": true
     },
-    "width": {
+    "logo_image_width": {
       "type": "integer",
       "required": true
     },
-    "height": {
+    "logo_image_height": {
       "type": "integer",
       "required": true
     }
