@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "community_benefits",
+  "info": {
+    "singularName": "community-benefit",
+    "pluralName": "community-benefits",
+    "displayName": "Community Benefit"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "benefit": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

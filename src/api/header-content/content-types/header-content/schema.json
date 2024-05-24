@@ -1,0 +1,44 @@
+{
+  "kind": "singleType",
+  "collectionName": "header_contents",
+  "info": {
+    "singularName": "header-content",
+    "pluralName": "header-contents",
+    "displayName": "Header Content",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "logo_image_light": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "logo_image_dark": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "logo_image_alt": {
+      "type": "string",
+      "required": true
+    },
+    "logo_image_width": {
+      "type": "integer",
+      "required": true
+    },
+    "logo_image_height": {
+      "type": "integer",
+      "required": true
+    }
+  }
+}
