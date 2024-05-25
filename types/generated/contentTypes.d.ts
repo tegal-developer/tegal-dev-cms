@@ -788,6 +788,79 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiBlogBlog extends Schema.CollectionType {
+  collectionName: 'blogs';
+  info: {
+    singularName: 'blog';
+    pluralName: 'blogs';
+    displayName: 'Blog';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    image: Attribute.Media & Attribute.Required;
+    title: Attribute.String & Attribute.Required;
+    body: Attribute.RichText &
+      Attribute.Required &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      >;
+    blog_category: Attribute.Relation<
+      'api::blog.blog',
+      'manyToOne',
+      'api::blog-category.blog-category'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<'api::blog.blog', 'oneToOne', 'admin::user'> &
+      Attribute.Private;
+  };
+}
+
+export interface ApiBlogCategoryBlogCategory extends Schema.CollectionType {
+  collectionName: 'blog_categories';
+  info: {
+    singularName: 'blog-category';
+    pluralName: 'blog-categories';
+    displayName: 'Blog Category';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    category: Attribute.String & Attribute.Required;
+    blogs: Attribute.Relation<
+      'api::blog-category.blog-category',
+      'oneToMany',
+      'api::blog.blog'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::blog-category.blog-category',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::blog-category.blog-category',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiCommunityActivityCommunityActivity
   extends Schema.CollectionType {
   collectionName: 'community_activities';
@@ -884,6 +957,91 @@ export interface ApiCommunityHashtagCommunityHashtag
       Attribute.Private;
     updatedBy: Attribute.Relation<
       'api::community-hashtag.community-hashtag',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiEventEvent extends Schema.CollectionType {
+  collectionName: 'events';
+  info: {
+    singularName: 'event';
+    pluralName: 'events';
+    displayName: 'Event';
+    description: '';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    flyer_image: Attribute.Media & Attribute.Required;
+    title: Attribute.String & Attribute.Required;
+    start_date_time: Attribute.DateTime & Attribute.Required;
+    end_date_time: Attribute.DateTime & Attribute.Required;
+    location: Attribute.String & Attribute.Required;
+    seat_capacity: Attribute.Integer;
+    description: Attribute.RichText &
+      Attribute.Required &
+      Attribute.CustomField<
+        'plugin::ckeditor.CKEditor',
+        {
+          output: 'HTML';
+          preset: 'rich';
+        }
+      >;
+    event_type: Attribute.Relation<
+      'api::event.event',
+      'manyToOne',
+      'api::event-type.event-type'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::event.event',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::event.event',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
+export interface ApiEventTypeEventType extends Schema.CollectionType {
+  collectionName: 'event_types';
+  info: {
+    singularName: 'event-type';
+    pluralName: 'event-types';
+    displayName: 'Event Type';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    type: Attribute.String & Attribute.Required;
+    events: Attribute.Relation<
+      'api::event-type.event-type',
+      'oneToMany',
+      'api::event.event'
+    >;
+    createdAt: Attribute.DateTime;
+    updatedAt: Attribute.DateTime;
+    publishedAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::event-type.event-type',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    updatedBy: Attribute.Relation<
+      'api::event-type.event-type',
       'oneToOne',
       'admin::user'
     > &
@@ -1188,9 +1346,13 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
+      'api::blog.blog': ApiBlogBlog;
+      'api::blog-category.blog-category': ApiBlogCategoryBlogCategory;
       'api::community-activity.community-activity': ApiCommunityActivityCommunityActivity;
       'api::community-benefit.community-benefit': ApiCommunityBenefitCommunityBenefit;
       'api::community-hashtag.community-hashtag': ApiCommunityHashtagCommunityHashtag;
+      'api::event.event': ApiEventEvent;
+      'api::event-type.event-type': ApiEventTypeEventType;
       'api::faq.faq': ApiFaqFaq;
       'api::footer-content.footer-content': ApiFooterContentFooterContent;
       'api::header-content.header-content': ApiHeaderContentHeaderContent;
