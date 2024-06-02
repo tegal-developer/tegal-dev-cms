@@ -101,7 +101,7 @@
       "required": true,
       "customField": "plugin::ckeditor.CKEditor"
     },
-    "member_section": {
+    "member_section_heading": {
       "type": "customField",
       "options": {
         "output": "HTML",
