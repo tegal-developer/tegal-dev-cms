@@ -1,17 +1,17 @@
 {
   "kind": "collectionType",
-  "collectionName": "event_types",
+  "collectionName": "event_categories",
   "info": {
-    "singularName": "event-type",
-    "pluralName": "event-types",
-    "displayName": "Event Type"
+    "singularName": "event-category",
+    "pluralName": "event-categories",
+    "displayName": "Event Category"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "type": {
+    "category": {
       "type": "string",
       "required": true
     },
@@ -19,7 +19,7 @@
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::event.event",
-      "mappedBy": "event_type"
+      "mappedBy": "event_category"
     }
   }
 }

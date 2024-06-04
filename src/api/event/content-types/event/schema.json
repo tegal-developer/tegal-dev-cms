@@ -36,9 +36,10 @@
       "type": "string",
       "required": true
     },
-    "seat_capacity": {
+    "max_rsvp": {
       "type": "integer",
-      "required": false
+      "required": true,
+      "default": 20
     },
     "description": {
       "type": "customField",
@@ -49,11 +50,20 @@
       "required": true,
       "customField": "plugin::ckeditor.CKEditor"
     },
-    "event_type": {
+    "event_category": {
       "type": "relation",
       "relation": "manyToOne",
-      "target": "api::event-type.event-type",
+      "target": "api::event-category.event-category",
       "inversedBy": "events"
+    },
+    "total_rsvp": {
+      "type": "integer",
+      "required": true,
+      "default": 0
+    },
+    "gmap_location_link": {
+      "type": "string",
+      "required": true
     }
   }
 }
