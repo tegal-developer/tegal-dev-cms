@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rsvp_statuses",
+  "info": {
+    "singularName": "rsvp-status",
+    "pluralName": "rsvp-statuses",
+    "displayName": "RSVP Status"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "status": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rsvps",
+  "info": {
+    "singularName": "rsvp",
+    "pluralName": "rsvps",
+    "displayName": "RSVP",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user_id": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "rsvps"
+    },
+    "event_id": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::event.event",
+      "inversedBy": "rsvps"
+    },
+    "attendance_code": {
+      "type": "string",
+      "required": true
+    },
+    "is_attended": {
+      "type": "boolean",
+      "required": false
+    },
+    "attended_at": {
+      "type": "datetime"
+    },
+    "rsvp_status_id": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::rsvp-status.rsvp-status"
+    }
+  }
+}
