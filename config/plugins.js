@@ -17,4 +17,35 @@ module.exports = ({ env }) => ({
       },
     },
   },
+  email: {
+    config: {
+      provider: "nodemailer",
+      providerOptions: {
+        host: env("SMTP_HOST"),
+        port: env("SMTP_PORT"),
+        auth: {
+          user: env("SMTP_USERNAME"),
+          pass: env("SMTP_PASSWORD"),
+        },
+      },
+      settings: {
+        defaultFrom: env("MAIL_DEFAULT_FROM"),
+        defaultReplyTo: env("MAIL_DEFAULT_REPLY_TO"),
+      },
+    },
+  },
+  "qrcode-generator": {
+    enabled: true,
+    config: {
+      contentTypes: [
+        {
+          uid: "api::rsvp.rsvp",
+          targetField: "attendance_code",
+          frontend: {
+            basePath: "/rsvps",
+          },
+        },
+      ],
+    },
+  },
 });
