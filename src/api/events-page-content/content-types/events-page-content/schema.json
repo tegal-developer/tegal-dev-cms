@@ -4,7 +4,8 @@
   "info": {
     "singularName": "events-page-content",
     "pluralName": "events-page-contents",
-    "displayName": "Events Page Content"
+    "displayName": "Events Page Content",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -12,8 +13,13 @@
   "pluginOptions": {},
   "attributes": {
     "heading": {
-      "type": "string",
-      "required": true
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "required": true,
+      "customField": "plugin::ckeditor.CKEditor"
     }
   }
 }
