@@ -26,7 +26,7 @@
     },
     "attendance_code": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "is_attended": {
       "type": "boolean",
@@ -39,6 +39,13 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::rsvp-status.rsvp-status"
+    },
+    "motivation": {
+      "type": "text",
+      "required": true
+    },
+    "expectation": {
+      "type": "text"
     }
   }
 }

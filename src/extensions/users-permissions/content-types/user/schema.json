@@ -67,11 +67,11 @@
     },
     "name": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "phone_number": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "instagram_username": {
       "type": "string"
@@ -81,13 +81,25 @@
     },
     "photo_url": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "rsvps": {
       "type": "relation",
       "relation": "oneToMany",
       "target": "api::rsvp.rsvp",
       "mappedBy": "user_id"
+    },
+    "address": {
+      "type": "string"
+    },
+    "interest": {
+      "type": "string"
+    },
+    "occupation": {
+      "type": "string"
+    },
+    "institution": {
+      "type": "string"
     }
   }
 }
