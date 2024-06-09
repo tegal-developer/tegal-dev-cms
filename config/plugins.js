@@ -36,16 +36,5 @@ module.exports = ({ env }) => ({
   },
   "qrcode-generator": {
     enabled: true,
-    config: {
-      contentTypes: [
-        {
-          uid: "api::rsvp.rsvp",
-          targetField: "attendance_code",
-          frontend: {
-            basePath: "/rsvps",
-          },
-        },
-      ],
-    },
   },
 });

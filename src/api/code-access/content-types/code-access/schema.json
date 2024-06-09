@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "code_accesses",
+  "info": {
+    "singularName": "code-access",
+    "pluralName": "code-accesses",
+    "displayName": "Code Access"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "attendance": {
+      "type": "string",
+      "required": true
+    },
+    "code": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

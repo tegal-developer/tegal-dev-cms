@@ -46,6 +46,9 @@
     },
     "expectation": {
       "type": "text"
+    },
+    "achieved_xp_point": {
+      "type": "integer"
     }
   }
 }

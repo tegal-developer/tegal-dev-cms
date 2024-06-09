@@ -16,7 +16,7 @@ module.exports = {
 
       console.log(rsvpAttendanceQRCode);
 
-      const response = await strapi
+      await strapi
         .plugin("email")
         .service("email")
         .send({
@@ -132,7 +132,10 @@ module.exports = {
 `,
         });
 
-      ctx.body = "ok";
+      ctx.body = {
+        error: false,
+        message: "rsvp mail information has sent successfully",
+      };
     } catch (err) {
       ctx.body = err;
     }
