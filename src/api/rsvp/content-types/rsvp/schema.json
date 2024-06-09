@@ -49,6 +49,11 @@
     },
     "achieved_xp_point": {
       "type": "integer"
+    },
+    "queue_number": {
+      "type": "integer",
+      "required": true,
+      "default": 0
     }
   }
 }
