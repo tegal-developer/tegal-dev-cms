@@ -83,12 +83,6 @@
       "type": "string",
       "required": false
     },
-    "rsvps": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::rsvp.rsvp",
-      "mappedBy": "user_id"
-    },
     "address": {
       "type": "string"
     },
@@ -100,6 +94,12 @@
     },
     "institution": {
       "type": "string"
+    },
+    "rsvps": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::rsvp.rsvp",
+      "mappedBy": "user"
     }
   }
 }

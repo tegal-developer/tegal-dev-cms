@@ -12,13 +12,13 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "user_id": {
+    "user": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "plugin::users-permissions.user",
       "inversedBy": "rsvps"
     },
-    "event_id": {
+    "event": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::event.event",
@@ -35,7 +35,7 @@
     "attended_at": {
       "type": "datetime"
     },
-    "rsvp_status_id": {
+    "rsvp_status": {
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::rsvp-status.rsvp-status"
