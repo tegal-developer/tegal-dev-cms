@@ -1,7 +1,7 @@
 "use strict";
 
 module.exports = {
-  sendRSVPMail: async (ctx, next) => {
+  sendRSVPMail: async (ctx) => {
     try {
       const {
         rsvpName,

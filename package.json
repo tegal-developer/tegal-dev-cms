@@ -7,7 +7,8 @@
     "develop": "strapi develop",
     "start": "strapi start",
     "build": "strapi build",
-    "strapi": "strapi"
+    "strapi": "strapi",
+    "lint": "eslint ./ --fix"
   },
   "dependencies": {
     "@ckeditor/strapi-plugin-ckeditor": "^0.0.11",
@@ -40,5 +41,10 @@
     "node": ">=18.0.0 <=20.x.x",
     "npm": "^8.x.x"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@eslint/js": "^9.4.0",
+    "eslint": "^9.4.0",
+    "globals": "^15.4.0"
+  }
 }

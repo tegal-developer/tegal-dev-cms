@@ -84,6 +84,12 @@
       "relation": "oneToMany",
       "target": "api::rsvp.rsvp",
       "mappedBy": "event"
+    },
+    "hackalearn_participants": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::hackalearn-participant.hackalearn-participant",
+      "mappedBy": "event"
     }
   }
 }
