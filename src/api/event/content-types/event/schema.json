@@ -96,6 +96,10 @@
       "relation": "oneToMany",
       "target": "api::event-question.event-question",
       "mappedBy": "event"
+    },
+    "code": {
+      "type": "string",
+      "required": true
     }
   }
 }
