@@ -14,8 +14,6 @@ module.exports = {
         eventGMAPLocationLink,
       } = ctx.request.body;
 
-      console.log(rsvpAttendanceQRCode);
-
       await strapi
         .plugin("email")
         .service("email")
