@@ -90,6 +90,12 @@
       "relation": "oneToMany",
       "target": "api::hackalearn-participant.hackalearn-participant",
       "mappedBy": "event"
+    },
+    "event_questions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::event-question.event-question",
+      "mappedBy": "event"
     }
   }
 }

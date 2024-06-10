@@ -106,6 +106,12 @@
       "relation": "oneToMany",
       "target": "api::hackalearn-participant.hackalearn-participant",
       "mappedBy": "user"
+    },
+    "event_questions": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::event-question.event-question",
+      "mappedBy": "user"
     }
   }
 }

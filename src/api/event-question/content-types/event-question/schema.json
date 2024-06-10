@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "event_questions",
+  "info": {
+    "singularName": "event-question",
+    "pluralName": "event-questions",
+    "displayName": "Event Question"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "event_questions"
+    },
+    "event": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::event.event",
+      "inversedBy": "event_questions"
+    },
+    "question": {
+      "type": "text",
+      "required": true
+    },
+    "is_answered": {
+      "type": "boolean",
+      "required": false
+    }
+  }
+}
