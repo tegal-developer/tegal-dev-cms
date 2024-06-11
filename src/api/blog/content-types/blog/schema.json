@@ -38,6 +38,10 @@
       "relation": "manyToOne",
       "target": "api::blog-category.blog-category",
       "inversedBy": "blogs"
+    },
+    "creator": {
+      "type": "string",
+      "required": true
     }
   }
 }
