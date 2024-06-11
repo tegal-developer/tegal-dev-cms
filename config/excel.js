@@ -1,13 +1,20 @@
 module.exports = {
   config: {
     "api::rsvp.rsvp": {
-      columns: ["attendance_code", "is_attended", "attended_at"],
+      columns: [
+        "attendance_code",
+        "is_attended",
+        "attended_at",
+        "motivation",
+        "expectation",
+        "achieved_xp_point",
+      ],
       relation: {
         user: {
-          column: ["name"],
+          column: ["email"],
         },
         event: {
-          column: ["title"],
+          column: ["slug"],
         },
         rsvp_status: {
           column: ["status"],
