@@ -39,13 +39,18 @@
       "target": "api::blog-category.blog-category",
       "inversedBy": "blogs"
     },
-    "creator": {
+    "author": {
       "type": "string",
       "required": true
     },
     "slug": {
       "type": "uid",
       "targetField": "title",
+      "required": true
+    },
+    "author_username": {
+      "type": "uid",
+      "targetField": "author",
       "required": true
     }
   }
