@@ -4,7 +4,8 @@
   "info": {
     "singularName": "footer-content",
     "pluralName": "footer-contents",
-    "displayName": "Footer Content"
+    "displayName": "Footer Content",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -19,6 +20,18 @@
       },
       "required": true,
       "customField": "plugin::ckeditor.CKEditor"
+    },
+    "instagram_url": {
+      "type": "string",
+      "required": true
+    },
+    "linkedin_url": {
+      "type": "string",
+      "required": true
+    },
+    "github_url": {
+      "type": "string",
+      "required": true
     }
   }
 }
