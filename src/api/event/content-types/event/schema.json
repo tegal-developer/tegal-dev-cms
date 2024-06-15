@@ -105,6 +105,11 @@
       "type": "boolean",
       "default": false,
       "required": true
+    },
+    "event_challenge": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::event-challenge.event-challenge"
     }
   }
 }

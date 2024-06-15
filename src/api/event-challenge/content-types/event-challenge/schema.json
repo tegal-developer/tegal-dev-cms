@@ -1,0 +1,23 @@
+{
+  "kind": "collectionType",
+  "collectionName": "event_challenges",
+  "info": {
+    "singularName": "event-challenge",
+    "pluralName": "event-challenges",
+    "displayName": "Event Challenge"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "dev_point": {
+      "type": "integer",
+      "required": true
+    }
+  }
+}
