@@ -4,7 +4,8 @@
   "info": {
     "singularName": "hackalearn-participant",
     "pluralName": "hackalearn-participants",
-    "displayName": "Hackalearn Participant"
+    "displayName": "Hackalearn Participant",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -29,7 +30,7 @@
     },
     "material_link": {
       "type": "string",
-      "required": true
+      "required": false
     }
   }
 }
