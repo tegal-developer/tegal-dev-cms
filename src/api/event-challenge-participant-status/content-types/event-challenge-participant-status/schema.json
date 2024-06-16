@@ -1,0 +1,19 @@
+{
+  "kind": "collectionType",
+  "collectionName": "event_challenge_participant_statuses",
+  "info": {
+    "singularName": "event-challenge-participant-status",
+    "pluralName": "event-challenge-participant-statuses",
+    "displayName": "Event Challenge Participant Status"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "status": {
+      "type": "string",
+      "required": true
+    }
+  }
+}
