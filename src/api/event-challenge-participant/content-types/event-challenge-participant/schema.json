@@ -36,7 +36,8 @@
     "event_challenge_participant_status": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::event-challenge-participant-status.event-challenge-participant-status"
+      "target": "api::event-challenge-participant-status.event-challenge-participant-status",
+      "inversedBy": "event_challenge_participant"
     }
   }
 }
