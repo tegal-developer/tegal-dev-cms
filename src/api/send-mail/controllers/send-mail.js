@@ -7,6 +7,7 @@ module.exports = {
         rsvpName,
         rsvpEmail,
         rsvpAttendanceQRCode,
+        rsvpStatus,
         eventName,
         eventDate,
         eventTime,
@@ -107,7 +108,9 @@ module.exports = {
                   <label>Tanggal: ${eventDate}</label><br />
                   <label>Waktu: ${eventTime}</label><br />
                   <label>Tempat: <a href="${eventGMAPLocationLink}" target="_blank"">${eventLocation}</a></label><br />
-                  <a href=${rsvpAttendanceQRCode} target="_blank">Download QR Code</a><br />
+                  <label>Status: ${rsvpStatus}</label><br />
+                  <label>QR Code: <a href=${rsvpAttendanceQRCode} target="_blank">Download QR Code</a></label><br />
+                  <br />
                   <p>Salam,</p>
                   <div>Tegal Dev Core Team</div>
                   <div class="contact">
