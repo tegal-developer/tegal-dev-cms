@@ -113,12 +113,6 @@
     },
     "dev_point": {
       "type": "integer"
-    },
-    "event_challenge_participants": {
-      "type": "relation",
-      "relation": "manyToMany",
-      "target": "api::event-challenge-participant.event-challenge-participant",
-      "mappedBy": "user"
     }
   }
 }
