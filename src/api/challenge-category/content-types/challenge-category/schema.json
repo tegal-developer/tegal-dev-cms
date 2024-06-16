@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "challenge_categories",
+  "info": {
+    "singularName": "challenge-category",
+    "pluralName": "challenge-categories",
+    "displayName": "Challenge Category"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "challenges": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::challenge.challenge",
+      "mappedBy": "challenge_category"
+    }
+  }
+}

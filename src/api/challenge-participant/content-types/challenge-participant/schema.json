@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "challenge_participants",
+  "info": {
+    "singularName": "challenge-participant",
+    "pluralName": "challenge-participants",
+    "displayName": "Challenge Participant",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "users": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "challenge_participants"
+    },
+    "material_resources_link": {
+      "type": "string",
+      "required": true
+    },
+    "achieved_dev_point": {
+      "type": "integer",
+      "required": false
+    },
+    "challenges": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::challenge.challenge",
+      "mappedBy": "challenge_participants"
+    },
+    "challenge_participant_status": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::challenge-participant-status.challenge-participant-status"
+    }
+  }
+}

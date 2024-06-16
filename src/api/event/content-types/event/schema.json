@@ -100,10 +100,10 @@
       "default": false,
       "required": true
     },
-    "event_challenge": {
+    "challenge": {
       "type": "relation",
       "relation": "oneToOne",
-      "target": "api::event-challenge.event-challenge"
+      "target": "api::challenge.challenge"
     }
   }
 }
