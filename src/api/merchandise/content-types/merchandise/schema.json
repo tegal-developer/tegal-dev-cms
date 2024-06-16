@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "merchandises",
+  "info": {
+    "singularName": "merchandise",
+    "pluralName": "merchandises",
+    "displayName": "Merchandise",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "required": false,
+      "customField": "plugin::ckeditor.CKEditor"
+    },
+    "stock": {
+      "type": "integer",
+      "required": true,
+      "default": 0
+    },
+    "price": {
+      "type": "integer",
+      "required": true,
+      "default": 0
+    },
+    "deal_price": {
+      "type": "integer",
+      "required": true,
+      "default": 0
+    },
+    "main_image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "other_images": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": false
+    }
+  }
+}

@@ -119,6 +119,12 @@
       "relation": "manyToMany",
       "target": "api::challenge-participant.challenge-participant",
       "mappedBy": "users"
+    },
+    "orders": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::order.order",
+      "mappedBy": "users_permissions_user"
     }
   }
 }
