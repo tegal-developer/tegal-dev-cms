@@ -35,14 +35,14 @@
       "relation": "oneToOne",
       "target": "api::event-challenge-category.event-challenge-category"
     },
-    "event_challenge_participant": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::event-challenge-participant.event-challenge-participant",
-      "mappedBy": "event_challenge"
-    },
     "commitment_fee": {
       "type": "integer"
+    },
+    "event_challenge_participant": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::event-challenge-participant.event-challenge-participant",
+      "inversedBy": "event_challenges"
     }
   }
 }

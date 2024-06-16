@@ -18,11 +18,11 @@
       "target": "plugin::users-permissions.user",
       "inversedBy": "event_challenge_participants"
     },
-    "event_challenge": {
+    "event_challenges": {
       "type": "relation",
-      "relation": "oneToOne",
+      "relation": "oneToMany",
       "target": "api::event-challenge.event-challenge",
-      "inversedBy": "event_challenge_participant"
+      "mappedBy": "event_challenge_participant"
     },
     "material_resource_link": {
       "type": "string",
@@ -34,11 +34,6 @@
     "queue_number": {
       "type": "integer",
       "required": false
-    },
-    "event_challenge_participant_status": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::event-challenge-participant-status.event-challenge-participant-status"
     }
   }
 }
