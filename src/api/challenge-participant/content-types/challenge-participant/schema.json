@@ -20,7 +20,7 @@
     },
     "material_resources_link": {
       "type": "string",
-      "required": true
+      "required": false
     },
     "achieved_dev_point": {
       "type": "integer",
