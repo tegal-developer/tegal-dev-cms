@@ -27,11 +27,6 @@
       "type": "integer",
       "required": false
     },
-    "event_challenge_participant_status": {
-      "type": "relation",
-      "relation": "oneToOne",
-      "target": "api::event-challenge-participant-status.event-challenge-participant-status"
-    },
     "event_challenges": {
       "type": "relation",
       "relation": "manyToMany",
