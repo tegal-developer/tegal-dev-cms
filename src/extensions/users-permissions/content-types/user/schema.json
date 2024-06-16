@@ -101,17 +101,24 @@
       "target": "api::rsvp.rsvp",
       "mappedBy": "user"
     },
-    "hackalearn_participants": {
-      "type": "relation",
-      "relation": "oneToMany",
-      "target": "api::hackalearn-participant.hackalearn-participant",
-      "mappedBy": "user"
-    },
     "event_questions": {
       "type": "relation",
       "relation": "manyToMany",
       "target": "api::event-question.event-question",
       "mappedBy": "user"
+    },
+    "event_challenge_participants": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::event-challenge-participant.event-challenge-participant",
+      "mappedBy": "user"
+    },
+    "xp_point": {
+      "type": "integer",
+      "required": false
+    },
+    "dev_point": {
+      "type": "integer"
     }
   }
 }

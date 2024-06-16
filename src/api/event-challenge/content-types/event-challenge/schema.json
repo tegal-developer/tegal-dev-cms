@@ -4,7 +4,8 @@
   "info": {
     "singularName": "event-challenge",
     "pluralName": "event-challenges",
-    "displayName": "Event Challenge"
+    "displayName": "Event Challenge",
+    "description": ""
   },
   "options": {
     "draftAndPublish": true
@@ -18,6 +19,27 @@
     "dev_point": {
       "type": "integer",
       "required": true
+    },
+    "max_capacity": {
+      "type": "integer",
+      "required": true,
+      "default": 0
+    },
+    "total_registered": {
+      "type": "integer",
+      "default": 0,
+      "required": true
+    },
+    "event_challenge_category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::event-challenge-category.event-challenge-category"
+    },
+    "event_challenge_participants": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::event-challenge-participant.event-challenge-participant",
+      "inversedBy": "event_challenges"
     }
   }
 }

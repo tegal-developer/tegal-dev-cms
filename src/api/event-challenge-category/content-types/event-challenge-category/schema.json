@@ -1,0 +1,18 @@
+{
+  "kind": "collectionType",
+  "collectionName": "event_challenge_categories",
+  "info": {
+    "singularName": "event-challenge-category",
+    "pluralName": "event-challenge-categories",
+    "displayName": "Event Challenge Category"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    }
+  }
+}
