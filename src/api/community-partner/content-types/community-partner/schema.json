@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "community_partners",
+  "info": {
+    "singularName": "community-partner",
+    "pluralName": "community-partners",
+    "displayName": "Community Partner"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "community_badges",
+  "info": {
+    "singularName": "community-badge",
+    "pluralName": "community-badges",
+    "displayName": "Community Badge",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    },
+    "users": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "community_badges"
+    }
+  }
+}

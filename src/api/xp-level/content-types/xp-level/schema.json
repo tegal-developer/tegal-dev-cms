@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "xp_levels",
+  "info": {
+    "singularName": "xp-level",
+    "pluralName": "xp-levels",
+    "displayName": "XP Level"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "min_xp": {
+      "type": "integer",
+      "required": true
+    },
+    "level": {
+      "type": "integer",
+      "required": true
+    },
+    "alias": {
+      "type": "string"
+    }
+  }
+}

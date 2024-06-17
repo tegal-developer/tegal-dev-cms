@@ -125,6 +125,12 @@
       "relation": "oneToMany",
       "target": "api::order.order",
       "mappedBy": "users_permissions_user"
+    },
+    "community_badges": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::community-badge.community-badge",
+      "mappedBy": "users"
     }
   }
 }
