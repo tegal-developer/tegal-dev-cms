@@ -1,0 +1,24 @@
+{
+  "kind": "singleType",
+  "collectionName": "merchandises_page_contents",
+  "info": {
+    "singularName": "merchandises-page-content",
+    "pluralName": "merchandises-page-contents",
+    "displayName": "Merchandises Page Content"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "required": true,
+      "customField": "plugin::ckeditor.CKEditor"
+    }
+  }
+}
