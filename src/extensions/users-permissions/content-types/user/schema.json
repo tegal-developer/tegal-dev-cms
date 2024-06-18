@@ -131,6 +131,12 @@
       "relation": "manyToMany",
       "target": "api::community-badge.community-badge",
       "mappedBy": "users"
+    },
+    "blogs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::blog.blog",
+      "mappedBy": "user"
     }
   }
 }

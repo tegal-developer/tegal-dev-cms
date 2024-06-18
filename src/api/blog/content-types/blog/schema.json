@@ -48,10 +48,11 @@
       "targetField": "title",
       "required": true
     },
-    "author_username": {
-      "type": "uid",
-      "targetField": "author",
-      "required": true
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "blogs"
     }
   }
 }
