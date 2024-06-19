@@ -1,7 +1,12 @@
 module.exports = ({ env }) => ({
   transformer: {
     enabled: true,
-    config: {},
+    config: {
+      responseTransforms: {
+        removeAttributesKey: true,
+        removeDataKey: true,
+      },
+    },
   },
   upload: {
     config: {
