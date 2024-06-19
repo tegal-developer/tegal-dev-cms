@@ -22,5 +22,19 @@ module.exports = {
       },
       locale: "false",
     },
+    "api::challenge-participant.challenge-participant": {
+      columns: ["material_resources_link", "achieved_dev_point"],
+      relation: {
+        user: {
+          column: ["email"],
+        },
+        challenge: {
+          column: ["name"],
+        },
+        challenge_participant_status: {
+          column: ["status"],
+        },
+      },
+    },
   },
 };
