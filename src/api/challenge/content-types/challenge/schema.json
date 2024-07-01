@@ -38,6 +38,14 @@
       "relation": "manyToMany",
       "target": "api::challenge-participant.challenge-participant",
       "inversedBy": "challenges"
+    },
+    "flyer_image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": false,
+      "required": true
     }
   }
 }
