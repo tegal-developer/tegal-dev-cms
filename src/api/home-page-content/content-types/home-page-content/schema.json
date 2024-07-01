@@ -110,6 +110,15 @@
       },
       "required": true,
       "customField": "plugin::ckeditor.CKEditor"
+    },
+    "challenge_section_heading": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "required": true,
+      "customField": "plugin::ckeditor.CKEditor"
     }
   }
 }
