@@ -40,11 +40,16 @@
       "inversedBy": "challenges"
     },
     "flyer_image": {
-      "allowedTypes": [
-        "images"
-      ],
       "type": "media",
       "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name",
       "required": true
     }
   }
