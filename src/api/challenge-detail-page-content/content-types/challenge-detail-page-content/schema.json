@@ -1,0 +1,24 @@
+{
+  "kind": "singleType",
+  "collectionName": "challenge_detail_page_contents",
+  "info": {
+    "singularName": "challenge-detail-page-content",
+    "pluralName": "challenge-detail-page-contents",
+    "displayName": "Challenge Detail Page Content"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "heading": {
+      "type": "customField",
+      "options": {
+        "output": "HTML",
+        "preset": "rich"
+      },
+      "required": true,
+      "customField": "plugin::ckeditor.CKEditor"
+    }
+  }
+}
