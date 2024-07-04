@@ -7,7 +7,11 @@
   "remoteUser": "root",
   "customizations": {
     "vscode": {
-      "extensions": ["esbenp.prettier-vscode"]
+      "extensions": [
+        "esbenp.prettier-vscode",
+        "mhutchie.git-graph",
+        "ms-vsliveshare.vsliveshare"
+      ]
     }
   }
 }
