@@ -25,6 +25,10 @@
       "type": "string",
       "required": true
     },
+    "youtube_channel_url": {
+      "type": "string",
+      "required": true
+    },
     "linkedin_url": {
       "type": "string",
       "required": true
