@@ -31,7 +31,9 @@
       "required": true
     },
     "total_registered": {
-      "type": "integer"
+      "type": "integer",
+      "default": 0,
+      "required": true
     },
     "challenge_participants": {
       "type": "relation",
